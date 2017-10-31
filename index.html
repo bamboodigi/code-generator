@@ -1,74 +1,252 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="icon" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/favicon.ico">-->
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <title>Starter Template for Bootstrap</title>
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/starter-template.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/code-styles/default.css">
 
-  <body>
+  <!-- Custom styles for this template -->
+  <link href="./css/main.css" rel="stylesheet">
+</head>
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<body>
+
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Navbar</a>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="starter-template">
+      <h1>Code</h1>
+      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML
+        document.
+      </p>
+      <div id="snippet">
+        <pre class="pre-scrollable mb-0 snippet">
+          <code id="code" class="ruby">class TagSelector
+  def initialize(tag)
+    @tag = tag
+  end
+
+  def match?(line_item)
+    line_item.variant.product.tags.include?(@tag)
+  end
+end
+
+class LowToHighPartitioner
+
+  def initialize(paid_item_count, discounted_item_count)
+    @paid_item_count = paid_item_count
+    @discounted_item_count = discounted_item_count
+  end
+
+  def partitionCross(cart, applicable_line_items, items_to_discount)
+    # Sort the items by price from low to high
+    sorted_items = applicable_line_items.sort_by{|line_item| line_item.variant.price}
+    # Find the total quantity of items
+    total_applicable_quantity = sorted_items.map(&:quantity).reduce(0, :+)
+    # Find the quantity of items that must be discounted
+    if @paid_item_count > items_to_discount
+      discounted_items_remaining = 0
+    else 
+      discounted_items_remaining = Integer((@discounted_item_count / @paid_item_count) * items_to_discount)
+      puts discounted_items_remaining
+    end
+    # Create an array of items to return
+    discounted_items = []
+
+    # Loop over all the items and find those to be discounted
+    sorted_items.each do |line_item|
+      # Exit the loop if all discounted items have been found
+      break if discounted_items_remaining == 0
+      # The item will be discounted
+      discounted_item = line_item
+      if line_item.quantity > discounted_items_remaining
+        # If the item has more quantity than what must be discounted, split it
+        discounted_item = line_item.split(take: discounted_items_remaining)
+
+        # Insert the newly-created item in the cart, right after the original item
+        position = cart.line_items.find_index(line_item)
+        cart.line_items.insert(position + 1, discounted_item)
+      end
+
+      # Decrement the items left to be discounted
+      discounted_items_remaining -= discounted_item.quantity
+      # Add the item to be returned
+      discounted_items.push(discounted_item)
+    end
+  #   puts applicable_line_items
+  #   puts sorted_items
+  # puts discounted_items
+    # Return the items to be discounted
+    discounted_items
+  end
+end
+
+class PercentageDiscount
+
+  def initialize(percent, message)
+    @percent = Decimal.new(percent) / 100.0
+    @message = message
+  end
+
+  def apply(line_item)
+    # Calculate the discount for this line item
+    line_discount = line_item.line_price * @percent
+
+    new_line_price = line_item.line_price - line_discount
+
+    line_item.change_line_price(new_line_price, message: @message)
+
+    # Print a debugging line to the console
+   # puts "Discounted line item with variant #{line_item.variant.id} by #{line_discount}."
+  end
+end
+
+# BogoCrossCampaign
+# ============
+#
+class BogoCrossCampaign
+
+  def initialize(trigger, selector, discount, partitioner)
+    @trigger = trigger
+    @selector = selector
+    @discount = discount
+    @partitioner = partitioner
+  end
+
+  def run(cart)
+    trigger_items = cart.line_items.select do |line_item|
+      @trigger.match?(line_item)
+    end
+    
+    total_discountable_items = 0
+    trigger_items.each do |line_item|
+      total_discountable_items = total_discountable_items + line_item.quantity
+    end
+    
+
+    applicable_items = cart.line_items.select do |line_item|
+      @selector.match?(line_item)
+    end
+    
+    discounted_items = @partitioner.partitionCross(cart, applicable_items, total_discountable_items)
+
+    discounted_items.each do |line_item|
+      @discount.apply(line_item)
+    end
+  end
+end
+
+
+CAMPAIGNS = [ 
+  BogoCrossCampaign.new(
+    #the first selector gets the tag of all the trigger items
+    TagSelector.new("pants"),
+    #the 2nd select gets the tags of all the discountable items
+    TagSelector.new("t-shirt"),
+    PercentageDiscount.new(100, "BUY 1 Pair of Pants GET 1 FREE T-Shirts!"),
+    LowToHighPartitioner.new(1,1)
+  ),
+  BogoCrossCampaign.new(
+    #the first selector gets the tag of all the trigger items
+    TagSelector.new("pants"),
+    #the 2nd select gets the tags of all the discountable items
+    TagSelector.new("t-shirt"),
+    PercentageDiscount.new(100, "BUY 2 Pair of Pants GET 2 FREE T-Shirts!"),
+    LowToHighPartitioner.new(2,2)
+  ),
+  BogoCrossCampaign.new(
+    #the first selector gets the tag of all the trigger items
+    TagSelector.new("pants"),
+    #the 2nd select gets the tags of all the discountable items
+    TagSelector.new("Socks"),
+    PercentageDiscount.new(100, "BUY 2 Pair of Pants GET 1 FREE Pair of Socks!"),
+    LowToHighPartitioner.new(2,1)
+  ),
+  BogoCrossCampaign.new(
+    #the first selector gets the tag of all the trigger items
+    TagSelector.new("pants"),
+    #the 2nd select gets the tags of all the discountable items
+    TagSelector.new("hats"),
+    PercentageDiscount.new(100, "BUY 1 Pair of Pants GET 1 FREE Pair of Hats!"),
+    LowToHighPartitioner.new(2,1)
+  )
+]
+
+CAMPAIGNS.each do |campaign|
+# Apply the campaign onto the cart.
+    campaign.run(Input.cart)
+end
+
+
+Output.cart = Input.cart
+        </code>
+        </pre>
+        <button id="clipboard-btn" class="btn w-100" data-clipboard-snippet>Copy Code</button>
       </div>
-    </nav>
+    </div>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
-    </div><!-- /.container -->
+  </div>
+  <!-- /.container -->
 
 
-    <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/ie10-viewport-bug-workaround.js"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>
